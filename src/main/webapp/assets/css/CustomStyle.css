@@ -30,3 +30,21 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .text-dark {
     color: #613E2B !important;
 }
+.card {
+    background-color: #EBE0D7;
+}
+.navbar .navbar-menu-wrapper { 
+    background: #EBE0D7;
+}
+.content-wrapper {
+    background: #F8F2ED;
+}
+.footer {
+    background: #8F7662;
+}
+.text-muted, .preview-list .preview-item .preview-item-content p .content-category {
+    color: #000 !important;
+}
+span.float-none.float-sm-right.d-block.mt-1.mt-sm-0.text-center {
+    color: #000 !important;
+}
