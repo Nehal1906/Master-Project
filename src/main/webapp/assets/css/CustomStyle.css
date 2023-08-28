@@ -1,0 +1,32 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Aug 28, 2023, 3:56:24 PM
+    Author     : jharn
+*/
+.navbar .navbar-brand-wrapper {
+    background: #c6b9a6; 
+}
+.sidebar {
+    background: #c6b9a6; 
+}
+.sidebar .nav .nav-item .nav-link {
+    color: #77614c;
+}
+.sidebar .nav .nav-item .nav-link .icon-bg .menu-icon {
+    color: #9a8988;
+}
+.sidebar .nav .nav-item.active > .nav-link .menu-title {
+    color: #1B0E07; 
+}
+.sidebar .nav .nav-item:hover {
+    background: #E1DEDD;
+}
+.sidebar .nav:not(.sub-menu) > .nav-item:hover:not(.nav-category):not(.nav-profile) > .nav-link {
+    color: #72665F;
+}
+.text-dark {
+    color: #613E2B !important;
+}
