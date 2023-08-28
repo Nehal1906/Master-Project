@@ -28,6 +28,10 @@ public class HelperDetail implements Serializable {
     public Date CreateDate;
     public boolean IsDeleted;
     public String LicenceNumber;
+    
+    //extra column
+    public String firstName;
+    public String lastName;
 
     public HelperDetail() {
     }
@@ -74,6 +78,14 @@ public class HelperDetail implements Serializable {
         return LicenceNumber;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
     public void setHelperDetailId(Integer HelperDetailId) {
         this.HelperDetailId = HelperDetailId;
     }
@@ -100,6 +112,14 @@ public class HelperDetail implements Serializable {
 
     public void setLicenceNumber(String LicenceNumber) {
         this.LicenceNumber = LicenceNumber;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
     
     

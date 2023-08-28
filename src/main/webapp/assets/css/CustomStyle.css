@@ -4,13 +4,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 */
 /* 
     Created on : Aug 28, 2023, 3:56:24 PM
-    Author     : jharn
+    Author     : jharna
 */
 .navbar .navbar-brand-wrapper {
-    background: #c6b9a6; 
+    background: #c6b9a6;
 }
 .sidebar {
-    background: #c6b9a6; 
+    background: #c6b9a6;
 }
 .sidebar .nav .nav-item .nav-link {
     color: #77614c;
@@ -19,7 +19,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     color: #9a8988;
 }
 .sidebar .nav .nav-item.active > .nav-link .menu-title {
-    color: #1B0E07; 
+    color: #1B0E07;
 }
 .sidebar .nav .nav-item:hover {
     background: #E1DEDD;
@@ -33,7 +33,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .card {
     background-color: #EBE0D7;
 }
-.navbar .navbar-menu-wrapper { 
+.navbar .navbar-menu-wrapper {
     background: #EBE0D7;
 }
 .content-wrapper {
@@ -47,4 +47,26 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 span.float-none.float-sm-right.d-block.mt-1.mt-sm-0.text-center {
     color: #000 !important;
+}
+.btn-primary {
+    background-color: #9B6C47;
+    border-color: #9B6C47;
+}
+.btn-primary:hover {
+    background-color: #9B6C47;
+    border-color: #9B6C47;
+}
+.btn-primary:not(.btn-light):hover, .btn-primary:not(.btn-light):focus, .btn-primary:not(.btn-light):active {
+    color: #000;
+}
+.btn-primary:not(.btn-light):focus, .btn-primary:not(.btn-light):active {
+    background: #9B6C47;
+    border-color: #9B6C47;
+}
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+    background-color: #9B6C47;
+    border-color: #9B6C47;
+}
+.sidebar .nav .nav-item.active > .nav-link:before {
+    background: #1B0E07;
 }

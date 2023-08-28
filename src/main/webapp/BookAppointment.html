@@ -20,6 +20,7 @@
         <link href="assets/css/CustomStyle.css" rel="stylesheet" type="text/css"/>
         <!-- End layout styles --> 
         <link rel="shortcut icon" href="assets/images/favicon.png" />
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker3.min.css" integrity="sha512-aQb0/doxDGrw/OC7drNaJQkIKFu6eSWnVMAwPN64p6sZKeJ4QCDYL42Rumw2ZtL8DB9f66q4CnLIUnAw28dEbg==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
     </head>
     <body> 
         <div class="container-scroller">
@@ -170,56 +171,58 @@
                 <div class="main-panel">
                     <div class="content-wrapper"> 
                         <div class="d-xl-flex justify-content-between align-items-start">
-                            <h2 class="text-dark font-weight-bold mb-2"> Professional Consultations </h2> 
+                            <h2 class="text-dark font-weight-bold mb-2"> Book Appointment </h2> 
                         </div>
                         <div class="row">
-                            <div class="col-md-12"> 
-                                <div class="tab-content tab-transparent-content">
-                                    <div class="tab-pane fade show active" id="business-1" role="tabpanel" aria-labelledby="business-tab">
-                                        <div class="row">
-                                            <div class="col-xl-4 col-lg-6 col-sm-6 grid-margin stretch-card">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h2 class="mb-2 text-dark font-weight-bold">Debbie B</h2>
-                                                        <h5 class="mb-4 text-dark font-weight-bold">Psychotherapist</h5>
-                                                        <p class="mt-4 mb-0">I am an experienced psychotherapist and counsellor who is passionate about helping people overcome emotional pain, heal from trauma, mend relationships and flourish in life. Whether you are experiencing feelings of anxiety, depression, feelings of sadness grief or distress, I will work with you to form a strong and supportive relationship based on an empathic understanding of your emotional life, experiences and important relationships. </p>
+                            <div class="col-12 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Please fill out this form to make an appointment for a session</h4> 
+                                        <form class="forms-sample">
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputName1">First Name</label>
+                                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="First Name">
                                                     </div>
-                                                    <button type="button" class="btn btn-dark btn-fw" onclick="window.location.href = 'BookAppointment.html'">Book Appointment</button>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputName1">Last Name</label>
+                                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Last Name">
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-4 col-lg-6 col-sm-6 grid-margin stretch-card">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h2 class="mb-2 text-dark font-weight-bold">Johnny O</h2>
-                                                        <h5 class="mb-4 text-dark font-weight-bold">Clinical Social Work/Therapist</h5>
-                                                        <p class="mt-4 mb-0"> I am interested in working LGBTQIA+ people, young people, survivors of trauma, people experiencing relationship difficulties, people wanting to learn more about who they are, people who use addictive behaviours as a way of managing, including drugs, alcohol, self-harm, eating disordered behaviours and thoughts of suicide.</p>
-
-                                                    </div>
-                                                    <button type="button" class="btn btn-dark btn-fw" onclick="window.location.href = 'BookAppointment.html'">Book Appointment</button>
-                                                </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputName1">Age</label>
+                                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Age">
                                             </div>
-                                            <div class="col-xl-4  col-lg-6 col-sm-6 grid-margin stretch-card">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h2 class="mb-2 text-dark font-weight-bold">Narian N</h2>
-                                                        <h5 class="mb-4 text-dark font-weight-bold">Psychologist, MPsych, PsyBA - Clin. Psych</h5>
-                                                        <p class="mt-4 mb-0">I am passionate about normalising the role of therapy in supporting individuals to create change and growth. This stance has in part, stemmed from experiences I've accrued across Public Mental Health in both Acute and Community mental health.</p>
-                                                    </div>
-                                                    <button type="button" class="btn btn-dark btn-fw" onclick="window.location.href = 'BookAppointment.html'">Book Appointment</button>
-                                                </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail3">Phone Number</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Phone Number">
                                             </div>
-                                            <div class="col-xl-4 col-lg-6 col-sm-6 grid-margin stretch-card">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h2 class="mb-2 text-dark font-weight-bold">Balancing M</h2>
-                                                        <h5 class="mb-4 text-dark font-weight-bold">Psychologist, MPsych, PsyBA - Health Psych</h5>
-                                                        <p class="mt-4 mb-0">I specialise in children and adolescents and enjoy seeing them understand themselves better. I work with the parents so they can understand why the behaviours maybe occurring and assist them with new strategies.</p>
-                                                    </div>
-                                                    <button type="button" class="btn btn-dark btn-fw" onclick="window.location.href = 'BookAppointment.html'">Book Appointment</button>
-                                                </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword4">What is the reason you require a consultation?</label>
+                                                <select class="form-control" id="exampleSelectGender">
+                                                    <option>Please Select</option>
+                                                    <option>Anxiety</option>
+                                                    <option>Depression</option>
+                                                </select>
                                             </div>
-                                        </div>
-
+                                            <div class="form-group">
+                                                <label for="exampleSelectGender">Do you want to share more information prior to our session?</label>
+                                                <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                                            </div> 
+                                            <div class="form-group">
+                                                <label for="exampleInputCity1">Select an available Date</label>
+                                                <input type="date" class="form-control" id="exampleInputCity1">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleTextarea1">Please select an available time</label>
+                                                <input type="time" class="form-control" id="exampleInputCity1">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary mr-2">Submit</button> 
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -256,6 +259,7 @@
         <!-- endinject -->
         <!-- Custom js for this page -->
         <script src="assets/js/dashboard.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/locales/bootstrap-datepicker.en-AU.min.js" integrity="sha512-ghvIK/3dPoQzHCrGQxvxAeTtLGNHobiKoLA8tdztoqiiINxSre6RiloNaN6uVLg1ESyBiZh7rnmRBa+psz85Zw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
         <!-- End custom js for this page -->
     </body>
 </html>
