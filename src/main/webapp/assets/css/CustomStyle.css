@@ -4,13 +4,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 */
 /* 
     Created on : Aug 28, 2023, 3:56:24 PM
-    Author     : jharna
+    Author     : jharn
 */
 .navbar .navbar-brand-wrapper {
-    background: #c6b9a6;
+    background: #c6b9a6; 
 }
 .sidebar {
-    background: #c6b9a6;
+    background: #c6b9a6; 
 }
 .sidebar .nav .nav-item .nav-link {
     color: #77614c;
@@ -19,7 +19,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     color: #9a8988;
 }
 .sidebar .nav .nav-item.active > .nav-link .menu-title {
-    color: #1B0E07;
+    color: #1B0E07; 
 }
 .sidebar .nav .nav-item:hover {
     background: #E1DEDD;
@@ -33,11 +33,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .card {
     background-color: #EBE0D7;
 }
-.navbar .navbar-menu-wrapper {
+.navbar .navbar-menu-wrapper { 
     background: #EBE0D7;
 }
 .content-wrapper {
-    background: #F8F2ED;
+    background: #F8F7F6;
 }
 .footer {
     background: #8F7662;
@@ -49,24 +49,32 @@ span.float-none.float-sm-right.d-block.mt-1.mt-sm-0.text-center {
     color: #000 !important;
 }
 .btn-primary {
-    background-color: #9B6C47;
-    border-color: #9B6C47;
+    color: #fff;
+    background-color: #976B48;
+    border-color: #976B48;
 }
-.btn-primary:hover {
-    background-color: #9B6C47;
-    border-color: #9B6C47;
+.navbar .navbar-menu-wrapper, .main-panel {
+    width: 100%;
 }
-.btn-primary:not(.btn-light):hover, .btn-primary:not(.btn-light):focus, .btn-primary:not(.btn-light):active {
-    color: #000;
+
+.site-title {
+    font-size: 30px;
+    font-family: "nunito-bold", sans-serif;
+    color: #001737 !important;
+    padding: 5px 0 0 10px;
+    margin-bottom: -10px;
 }
-.btn-primary:not(.btn-light):focus, .btn-primary:not(.btn-light):active {
-    background: #9B6C47;
-    border-color: #9B6C47;
+span.site-tagline {
+    font-size: 12px;
+    padding: 0 10px;
+    margin-left: 5px;
 }
-.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
-    background-color: #9B6C47;
-    border-color: #9B6C47;
+.btn-primary {
+    color: #fff;
+    background-color: #976B48 !important;
+    border-color: #976B48 !important;
 }
-.sidebar .nav .nav-item.active > .nav-link:before {
-    background: #1B0E07;
+.card .card-body {
+    padding: 2.5rem 2.5rem;
+    text-align: center;
 }
