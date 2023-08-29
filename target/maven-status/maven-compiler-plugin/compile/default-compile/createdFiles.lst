@@ -1,0 +1,8 @@
+Controller\AppointmentController.class
+Entity\Appointment.class
+Entity\HelperDetail.class
+com\yourally\resources\JakartaEE8Resource.class
+Controller\DatabaseConnection.class
+Controller\ProfessionalConsulatationController.class
+Entity\User.class
+com\yourally\JakartaRestConfiguration.class
