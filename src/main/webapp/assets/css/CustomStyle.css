@@ -53,9 +53,9 @@ span.float-none.float-sm-right.d-block.mt-1.mt-sm-0.text-center {
     background-color: #976B48;
     border-color: #976B48;
 }
-.navbar .navbar-menu-wrapper, .main-panel {
+/*.navbar .navbar-menu-wrapper, .main-panel {
     width: 100%;
-}
+}*/
 
 .site-title {
     font-size: 30px;
@@ -81,4 +81,12 @@ span.site-tagline {
 .card .card-body {
     padding: 2.5rem 2.5rem;
     text-align: center;
+}
+
+.navbar-menu-wrapper.d-flex.align-items-stretch.landingNav {
+    width: 100%;
+}
+
+.main-panel.landingpanel{
+    width: 100%;
 }
