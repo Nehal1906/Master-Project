@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>YourAlly</title>
+        <!-- plugins:css --> 
+        <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
+        <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+        <!-- endinject -->
+        <!-- Plugin css for this page -->
+        <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+        <!-- End plugin css for this page -->
+        <!-- inject:css -->
+        <!-- endinject -->
+        <!-- Layout styles -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href="assets/css/CustomStyle.css" rel="stylesheet" type="text/css"/>
+        <!-- End layout styles --> 
+        <link rel="shortcut icon" href="assets/images/favicon.png" />
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker3.min.css" integrity="sha512-aQb0/doxDGrw/OC7drNaJQkIKFu6eSWnVMAwPN64p6sZKeJ4QCDYL42Rumw2ZtL8DB9f66q4CnLIUnAw28dEbg==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+    </head>
+    <body> 
+        <div class="container-scroller">
+            <!-- partial:partials/_navbar.html -->
+            <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+                <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                    <a class="navbar-brand brand-logo" href="index.html"><img src="assets/logo.jpeg" alt="logo" /></a>
+                    <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/logo.jpeg" alt="logo" /></a>
+                </div>
+                <div class="navbar-menu-wrapper d-flex align-items-stretch">
+                    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                        <span class="mdi mdi-menu"></span>
+                    </button> 
+                    <ul class="navbar-nav navbar-nav-right"> 
+                        <li class="nav-item nav-profile dropdown">
+                            <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                                <div class="nav-profile-img">
+                                    <!-- <img src="assets/images/faces/face28.png" alt="image">-->
+                                </div>
+                                <div class="nav-profile-text">
+                                    <p class="mb-1 text-black">User</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu navbar-dropdown dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="profileDropdown" data-x-placement="bottom-end">
+                                <div class="p-3 text-center bg-primary">
+                                    <img class="img-avatar img-avatar48 img-avatar-thumb" src="assets/images/faces/face28.png" alt="">
+                                </div>
+                                <div class="p-2">
+                                    <h5 class="dropdown-header text-uppercase pl-2 text-dark">User Options</h5>
+                                    <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
+                                        <span>Inbox</span>
+                                        <span class="p-0">
+                                            <span class="badge badge-primary">3</span>
+                                            <i class="mdi mdi-email-open-outline ml-1"></i>
+                                        </span>
+                                    </a>
+                                    <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
+                                        <span>Profile</span>
+                                        <span class="p-0">
+                                            <span class="badge badge-success">1</span>
+                                            <i class="mdi mdi-account-outline ml-1"></i>
+                                        </span>
+                                    </a>
+                                    <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                                        <span>Settings</span>
+                                        <i class="mdi mdi-settings"></i>
+                                    </a>
+                                    <div role="separator" class="dropdown-divider"></div>
+                                    <h5 class="dropdown-header text-uppercase  pl-2 text-dark mt-2">Actions</h5>
+                                    <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
+                                        <span>Lock Account</span>
+                                        <i class="mdi mdi-lock ml-1"></i>
+                                    </a>
+                                    <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="Login.html">
+                                        <span>Log Out</span>
+                                        <i class="mdi mdi-logout ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!--<li class="nav-item dropdown">
+                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                          <i class="mdi mdi-bell-outline"></i>
+                          <span class="count-symbol bg-danger"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                          <h6 class="p-3 mb-0 bg-primary text-white py-4">Notifications</h6>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item preview-item">
+                            <div class="preview-thumbnail">
+                              <div class="preview-icon bg-success">
+                                <i class="mdi mdi-calendar"></i>
+                              </div>
+                            </div>
+                            <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                              <h6 class="preview-subject font-weight-normal mb-1">Event today</h6>
+                              <p class="text-gray ellipsis mb-0"> Just a reminder that you have an event today </p>
+                            </div>
+                          </a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item preview-item">
+                            <div class="preview-thumbnail">
+                              <div class="preview-icon bg-warning">
+                                <i class="mdi mdi-settings"></i>
+                              </div>
+                            </div>
+                            <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                              <h6 class="preview-subject font-weight-normal mb-1">Settings</h6>
+                              <p class="text-gray ellipsis mb-0"> Update dashboard </p>
+                            </div>
+                          </a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item preview-item">
+                            <div class="preview-thumbnail">
+                              <div class="preview-icon bg-info">
+                                <i class="mdi mdi-link-variant"></i>
+                              </div>
+                            </div>
+                            <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                              <h6 class="preview-subject font-weight-normal mb-1">Launch Admin</h6>
+                              <p class="text-gray ellipsis mb-0"> New admin wow! </p>
+                            </div>
+                          </a>
+                          <div class="dropdown-divider"></div>
+                          <h6 class="p-3 mb-0 text-center">See all notifications</h6>
+                        </div>
+                      </li>--> 
+                    </ul>
+                    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                        <span class="mdi mdi-menu"></span>
+                    </button>
+                </div>
+            </nav>
+            <!-- partial -->
+            <div class="container-fluid page-body-wrapper">
+                <!-- partial:partials/_sidebar.html -->
+                <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                    <ul class="nav"> 
+                        <li class="nav-item nav-category"></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="MainDashboard.html">
+                                <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
+                                <span class="menu-title">Dashboard</span>
+                            </a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="Resources.html">
+                                <span class="icon-bg"><i class="mdi mdi-contacts menu-icon"></i></span>
+                                <span class="menu-title">Self-Care Resources</span>
+                            </a> 
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ProfessionalHelp.html">
+                                <span class="icon-bg"><i class="mdi mdi-format-list-bulleted menu-icon"></i></span>
+                                <span class="menu-title">Professional Consultations</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="EngagementSpace.html">
+                                <span class="icon-bg"><i class="mdi mdi-chart-bar menu-icon"></i></span>
+                                <span class="menu-title">Engagement Space</span>
+                            </a>
+                        </li> 
+                    </ul>
+                </nav>
+                <!-- partial -->
+                <div class="main-panel">
+                    <div class="content-wrapper"> 
+                        <div class="d-xl-flex justify-content-between align-items-start">
+                            <h2 class="text-dark font-weight-bold mb-2"> Book Appointment </h2> 
+                        </div>
+                        <div class="row">
+                            <div class="col-12 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Please fill out this form to make an appointment for a session</h4> 
+                                        <form class="forms-sample" id="bookform">
+                                               <input id="userid" type="hidden"/>
+                                                        <input id="helperid" type="hidden"/>
+<!--                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputName1">First Name</label>
+                                                     
+                                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="First Name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputName1">Last Name</label>
+                                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Last Name">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputName1">Age</label>
+                                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Age">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail3">Phone Number</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Phone Number">
+                                            </div>-->
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword4">What is the reason you require a consultation?</label>
+                                                <select class="form-control" id="problem">
+                                                    <option value="">Please Select</option>
+                                                    <option>Anxiety</option>
+                                                    <option>Depression</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleSelectGender">Do you want to share more information prior to our session?</label>
+                                                <textarea class="form-control" id="description" rows="4"></textarea>
+                                            </div> 
+                                            <div class="form-group">
+                                                <label for="exampleInputCity1">Select an available Date</label>
+                                                <input type="date" class="form-control" id="date">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleTextarea1">Please select an available time</label>
+                                                <input type="time" class="form-control" id="time">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary mr-2">Submit</button> 
+                                        </form>
+                                        <div id="message" class="mt-2" style="overflow-wrap: break-word;">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- content-wrapper ends -->
+                    <!-- partial:partials/_footer.html -->
+                    <footer class="footer">
+                        <div class="footer-inner-wraper">
+                            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2023</span>
+                                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> YourAlly </span>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- partial -->
+                </div>
+                <!-- main-panel ends -->
+            </div>
+            <!-- page-body-wrapper ends -->
+        </div>
+        <!-- container-scroller -->
+        <!-- plugins:js -->
+        <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page -->
+        <script src="assets/vendors/chart.js/Chart.min.js"></script>
+        <script src="assets/vendors/jquery-circle-progress/js/circle-progress.min.js"></script>
+        <!-- End plugin js for this page -->
+        <!-- inject:js -->
+        <script src="assets/js/off-canvas.js"></script>
+        <script src="assets/js/hoverable-collapse.js"></script>
+        <script src="assets/js/misc.js"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page -->
+        <script src="assets/js/dashboard.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/locales/bootstrap-datepicker.en-AU.min.js" integrity="sha512-ghvIK/3dPoQzHCrGQxvxAeTtLGNHobiKoLA8tdztoqiiINxSre6RiloNaN6uVLg1ESyBiZh7rnmRBa+psz85Zw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+        <!-- End custom js for this page -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </body>
+</html>
+
+<script>
+    $(document).ready(function () {
+
+        var userid = $.cookie('userid');
+        
+            
+
+        $("#userid").val(userid);
+        let searchParams = new URLSearchParams(window.location.search);
+        if (searchParams.has('id'))
+        {
+            var helperid = searchParams.get('id');
+
+            $("#helperid").val(helperid);
+        }
+
+
+
+        $("#bookform").on('submit', function (e) {
+
+            e.preventDefault();
+
+            var userid = $("#userid").val();
+             $.cookie('userid', userid);
+            var helperid = $("#helperid").val();
+            var date = $("#date").val();
+            var time = $("#time").val();
+            var problem = $("#problem").val();
+            var description = $("#description").val();
+
+            var appdate = date + " " + time;
+            var url = "api/book/newbook";
+            var formData = {UserId: userid, helperId: helperid, AppointmentDate: appdate, Problem: problem, Description: description};
+            $.ajax({
+                cache: false,
+                url: url,
+                type: 'POST',
+                dataType: 'json',
+                data: JSON.stringify(formData),
+                contentType: "application/json",
+                success: function (data) {
+
+                    if (data.code == 0)
+                    {
+                        $("#message").addClass("text-danger");
+                        $("#message").html(data.message);
+
+                    } else
+                    {
+
+                        $.cookie('userid', data.code);
+                        $("#message").addClass("text-success");
+                        $("#message").html(data.message);
+
+                    }
+
+                },
+                error: function (jqXHR, exception) {
+                    $("#message").addClass("text-danger");
+                    $("#message").html(exception);
+
+                }
+            });
+
+
+        });
+
+    });
+</script>
