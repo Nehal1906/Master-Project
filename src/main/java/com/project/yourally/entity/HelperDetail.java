@@ -38,6 +38,10 @@ public class HelperDetail implements Serializable {
     public HelperDetail() {
     }
 
+    public HelperDetail(Integer id)
+    {
+        HelperDetailId= id;
+    }
     public HelperDetail(Integer HelperDetailId, User user, String Specialization, String Description, Date CreateDate, boolean IsDeleted, String LicenceNumber) {
         this.HelperDetailId = HelperDetailId;
         this.user = user;

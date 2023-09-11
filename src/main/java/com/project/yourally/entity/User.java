@@ -41,6 +41,10 @@ public class User implements Serializable {
     public User() {
     }
 
+     public User(Integer userid) {
+         UserId  = userid;
+     }
+
     public User(Integer UserId,String FirstName, String LastName, String Email, String PhoneNumber, String Address, String Password, Boolean IsAdmin, Boolean IsSeeker, Boolean IsHelper, Date Dateofbirth, Date CreatedDate, Boolean IsDeleted, String Gender) {
         this.UserId=UserId;
         this.FirstName = FirstName;

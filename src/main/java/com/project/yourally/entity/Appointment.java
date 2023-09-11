@@ -8,6 +8,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -22,21 +26,29 @@ public class Appointment implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer AppointmentId;
-    public Integer UserId;
-    public Integer helperId;
+ 
+    
     public String AppointmentDate;
     public String Status;
     public Date CreatedDate;
     public String Problem;
     public String Description;
 
+    @ManyToOne
+    @JoinColumn(name="UserId")
+    public User UserId;
+   
+    @ManyToOne
+   @JoinColumn(name="helperId")
+   public HelperDetail helperId;
+    
     public Appointment() {
     }
 
-    public Appointment(Integer AppointmentId, Integer UserId, Integer helperId, String AppointmentDate, String Status, Date CreatedDate) {
+    public Appointment(Integer AppointmentId, User user, HelperDetail helper, String AppointmentDate, String Status, Date CreatedDate) {
         this.AppointmentId = AppointmentId;
-        this.UserId = UserId;
-        this.helperId = helperId;
+        this.UserId = user;
+        this.helperId = helper;
         this.AppointmentDate = AppointmentDate;
         this.Status = Status;
         this.CreatedDate = CreatedDate;
@@ -50,11 +62,11 @@ public class Appointment implements Serializable {
         return AppointmentId;
     }
 
-    public Integer getUserId() {
+    public User getUserId() {
         return UserId;
     }
 
-    public Integer getHelperId() {
+    public HelperDetail getHelperId() {
         return helperId;
     }
 
@@ -74,11 +86,11 @@ public class Appointment implements Serializable {
         this.AppointmentId = AppointmentId;
     }
 
-    public void setUserId(Integer UserId) {
+    public void setUserId(User UserId) {
         this.UserId = UserId;
     }
 
-    public void setHelperId(Integer helperId) {
+    public void setHelperId(HelperDetail helperId) {
         this.helperId = helperId;
     }
 
