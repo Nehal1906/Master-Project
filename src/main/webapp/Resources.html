@@ -37,10 +37,10 @@
                         <li class="nav-item nav-profile dropdown">
                             <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                                 <div class="nav-profile-img">
-                                    <!-- <img src="assets/images/faces/face28.png" alt="image">-->
+                                    <img src="assets/photos/nehal.png" alt="">
                                 </div>
                                 <div class="nav-profile-text">
-                                    <p class="mb-1 text-black">User</p>
+                                    <p class="mb-1 text-black" id="username">User</p>
                                 </div>
                             </a>
                             <div class="dropdown-menu navbar-dropdown dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="profileDropdown" data-x-placement="bottom-end">
@@ -73,7 +73,7 @@
                                         <span>Lock Account</span>
                                         <i class="mdi mdi-lock ml-1"></i>
                                     </a>
-                                    <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
+                                    <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="Login.html">
                                         <span>Log Out</span>
                                         <i class="mdi mdi-logout ml-1"></i>
                                     </a>
@@ -172,35 +172,13 @@
                         <div class="d-xl-flex justify-content-between align-items-start">
                             <h2 class="text-dark font-weight-bold mb-2"> Self-Care Resources </h2> 
                         </div>
-                        <div class="row">
+                        <div class="row" >
                             <div class="col-md-12"> 
                                 <div class="tab-content tab-transparent-content">
                                     <div class="tab-pane fade show active" id="business-1" role="tabpanel" aria-labelledby="business-tab">
-                                        <div class="row">
-                                            <div class="col-xl-4 col-lg-6 col-sm-6 grid-margin stretch-card">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h2 class="mb-2 text-dark font-weight-bold">Digital Health Solutions for Mental Health Disorders During COVID-19</h2>
-                                                        <p class="mt-4 mb-0 text-center"><a href="https://www.frontiersin.org/articles/10.3389/fpsyt.2020.582007/full">Click here to see the article</a> </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-lg-6 col-sm-6 grid-margin stretch-card">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h2 class="mb-2 text-dark font-weight-bold">Kids’ mental health is in crisis. Here’s what psychologists are doing to help</h2>
-                                                        <p class="mt-4 mb-0 text-center"> <a href="https://www.apa.org/monitor/2023/01/trends-improving-youth-mental-health"> Click here to see the article</a></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4  col-lg-6 col-sm-6 grid-margin stretch-card">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h2 class="mb-2 text-dark font-weight-bold">Digital Health Solutions for Mental Health Disorders During COVID-19</h2>
-                                                        <p class="mt-4 mb-0 text-center"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7509592/"> Click here to see the article</a></p>
-                                                    </div>
-                                                </div>
-                                            </div> 
+                                        <div class="row" id="cards">
+
+
                                         </div>
 
                                     </div>
@@ -239,6 +217,40 @@
         <!-- endinject -->
         <!-- Custom js for this page -->
         <script src="assets/js/dashboard.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="assets/js/userinfo.js"></script>
         <!-- End custom js for this page -->
     </body>
 </html>
+
+<script>
+    $(document).ready(function () {
+
+        var url = "api/resources/list";
+
+        $.ajax({
+
+            url: url,
+            dataType: 'json',
+            type: 'get',
+            success: function (data) {
+                var html = '';
+                for (i = 0; i < data.length; i++)
+                {
+                    //alert(data[i].userId.FirstName);
+                    html += '<div class="col-xl-4 col-lg-6 col-sm-6 grid-margin stretch-card">';
+                    html += '<div class="card">';
+                    html += '<div class="card-body">';
+                    html += '<h2 class="mb-2 text-dark font-weight-bold">'+ data[i].title+'</h2>';
+                    html += '<p class="mt-4 mb-0 text-center"><a href="'+ data[i].Url+'">Click here to see the article</a> </p>';
+                    html += '</div>';
+                    html += '</div>';
+                    html += '</div>';
+                }
+
+                $("#cards").html(html);
+            }
+        });
+
+    });
+</script>

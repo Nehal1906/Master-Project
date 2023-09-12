@@ -112,7 +112,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                             } else
                             {
             
-                                $.cookie('userid', data.code,{ expires: 1 });
+                                $.cookie('userid', data.code,{ expires: 7 });
+                                
                                 $("#message").addClass("text-success");
                                 $("#message").html(data.message);
                                 window.location="MainDashboard.html";

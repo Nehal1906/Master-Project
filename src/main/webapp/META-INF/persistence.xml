@@ -9,7 +9,14 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
                 
 
-		
+		<properties>
+			<property name="jakarta.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/Test" />
+			<property name="jakarta.persistence.jdbc.user" value="journaldev" />
+			<property name="jakarta.persistence.jdbc.password" value="journaldev" />
+			<property name="hibernate.show_sql" value="true" />
+		</properties>
+
 	</persistence-unit>
 
 </persistence>

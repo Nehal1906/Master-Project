@@ -269,6 +269,8 @@
         <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/locales/bootstrap-datepicker.en-AU.min.js" integrity="sha512-ghvIK/3dPoQzHCrGQxvxAeTtLGNHobiKoLA8tdztoqiiINxSre6RiloNaN6uVLg1ESyBiZh7rnmRBa+psz85Zw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
         <!-- End custom js for this page -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+        <script src="assets/js/userinfo.js"></script>
     </body>
 </html>
 
@@ -295,7 +297,7 @@
             e.preventDefault();
 
             var userid = $("#userid").val();
-             $.cookie('userid', userid);
+             
             var helperid = $("#helperid").val();
             var date = $("#date").val();
             var time = $("#time").val();
@@ -322,7 +324,7 @@
                     } else
                     {
 
-                        $.cookie('userid', data.code);
+                        
                         $("#message").addClass("text-success");
                         $("#message").html(data.message);
 
