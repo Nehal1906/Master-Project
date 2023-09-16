@@ -27,13 +27,14 @@
             <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
                 <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
                     <a class="navbar-brand brand-logo" href="index.html"><img src="assets/logo.jpeg" alt="logo" /></a>
-                    <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/logo.jpeg" alt="logo" /></a>
+                    <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
                 </div>
                 <div class="navbar-menu-wrapper d-flex align-items-stretch">
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                         <span class="mdi mdi-menu"></span>
                     </button> 
-                    <ul class="navbar-nav navbar-nav-right"> 
+                    
+               <ul class="navbar-nav navbar-nav-right"> 
                         <li class="nav-item nav-profile dropdown">
                             <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                                 <div class="nav-profile-img">
@@ -71,7 +72,7 @@
                         </li>
 
                   
-                    </ul>
+                    </ul>    
                     <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
                         <span class="mdi mdi-menu"></span>
                     </button>
@@ -107,59 +108,59 @@
                                 <span class="menu-title">My Appointments</span>
                             </a>
                         </li>
-                        
-                           <li class="nav-item" id="appointmenthelper">
+
+                        <li class="nav-item" id="appointmenthelper">
                             <a class="nav-link" href="HelperAppointments.html">
                                 <span class="icon-bg"><i class="mdi mdi-format-list-bulleted menu-icon"></i></span>
                                 <span class="menu-title">Appointments</span>
                             </a>
                         </li>
-                     
+                       
                     </ul>
                 </nav>
+
                 <!-- partial -->
                 <div class="main-panel">
-                    <div class="content-wrapper"> 
-                        <div class="d-xl-flex justify-content-between align-items-start">
-                            <h2 class="text-dark font-weight-bold mb-2"> <span id="label1"></span> Dashboard </h2> 
+                    <div class="content-wrapper">
+                        <div class="page-header">
+                            <h3 class="page-title"> Appointment Status </h3>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Appointment Status</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Appointment Status</li>
+                                </ol>
+                            </nav>
                         </div>
                         <div class="row">
-                            <div class="col-md-12"> 
-                                <div class="tab-content tab-transparent-content">
-                                    <div class="tab-pane fade show active" id="business-1" role="tabpanel" aria-labelledby="business-tab">
-                                        <div class="row"> 
-                                            <div class="col-sm-8  grid-margin stretch-card">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <img src="assets/photos/dashboard.jpeg" alt=""/> 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4 grid-margin stretch-card">
-                                                <div class="card">
-                                                    <div class="card-body mb-4"> 
-                                                        <canvas id="account-retension"></canvas>
-                                                    </div>
-                                                    <div class="card-body pt-4">
-                                                        <div class="row pt-4">
-                                                            <div class="col-sm-6">
-                                                                <div class="text-center border-right border-md-0">
 
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <div class="text-center">
+                            <div class="col-lg-12 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Appointment Status</h4>
 
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <table class="table table-hover" id="data1">
+                                            <thead>
+                                                <tr>
+                                                    <th>User Name</th>
+                                                    <th>Appointment Date</th>
+                                                    <th>Problem</th>
+                                                    <th>Status</th>
+                                                    <th>Cancel Appointment</th>
+                                                    <th>Discussion</th>
+                                                </tr>
+
+                                            </thead>
+                                            <tbody>
+
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
+
+
+
+
                         </div>
                     </div>
                     <!-- content-wrapper ends -->
@@ -193,8 +194,101 @@
         <!-- endinject -->
         <!-- Custom js for this page -->
         <script src="assets/js/dashboard.js"></script>
+        <!-- End custom js for this page -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="assets/js/userinfo.js"></script>
-        <!-- End custom js for this page -->
     </body>
+
+    <script>
+        $(document).ready(function () {
+
+
+            function loadData()
+            {
+                var userid = $.cookie('userid');
+                var url = 'api/book/listbyhelper';
+
+                var formData = {
+                    UserId: userid
+                };
+
+                $.ajax({
+
+                    cache: false,
+                    url: url,
+                    type: 'POST',
+                    dataType: 'json',
+                    data: JSON.stringify(formData),
+                    contentType: "application/json",
+
+                    success: function (data) {
+                        var html = '';
+                        for (i = 0; i < data.length; i++)
+                        {
+                            //alert(data[i].userId.FirstName);
+
+                            $("#username").html(data[i].UserId.FirstName + " " + data[i].UserId.LastName);
+                            html += "<tr>";
+
+                            html += '<td>' + data[i].userId.FirstName + ' ' + data[i].userId.LastName + '</td>';
+
+                            html += '<td>' + data[i].AppointmentDate + '</td>';
+                            html += '<td>' + data[i].Problem + '</td>';
+                            if (data[i].Status == "Schedule")
+                            {
+                                html += '<td class="text-success">' + data[i].Status + '</td>';
+                            } else
+                            {
+                                html += '<td class="text-danger">' + data[i].Status + '</td>';
+                            }
+                            if (data[i].Status == 'Schedule')
+                            {
+                                html += '<td><a class="cancel" data-id=' + data[i].AppointmentId + ' href="#">Cancel Appointment</a></td>';
+                            } else
+                            {
+                                html += '<td></td>';
+                            }
+
+                            html += '<td><a class="discuss"  href="DiscussionForum.html?apid=' + data[i].AppointmentId + ' ">Discuss</a></td>';
+
+                            html += "</tr>";
+                        }
+
+                        $("#data1 > tbody").html(html);
+                    }
+                });
+
+            }
+
+
+            $("body").on('click', 'a.cancel', function (e) {
+
+                var id = $(this).data('id');
+                if (confirm('Sure want to cancel ' + id))
+                {
+                    var url = 'api/book/cancel';
+
+                    var formData = {AppointmentId: id};
+
+                    $.ajax({
+                        url: url,
+                        type: 'post',
+                        dataType: 'json',
+                        data: JSON.stringify(formData),
+                        contentType: "application/json",
+                        success: function (data) {
+                            loadData();
+                        }
+                    });
+                }
+            });
+
+
+            loadData();
+        });
+
+
+
+
+    </script>
 </html>

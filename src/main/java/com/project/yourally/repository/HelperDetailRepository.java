@@ -5,6 +5,7 @@
 package com.project.yourally.repository;
 
 import com.project.yourally.entity.HelperDetail;
+import com.project.yourally.entity.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -25,11 +26,28 @@ public class HelperDetailRepository implements Serializable {
 
         try {
             TypedQuery<HelperDetail> query1 = entityManager.createQuery("SELECT u FROM HelperDetail u", HelperDetail.class);
-            
+
             list = query1.getResultList();
         } catch (Exception e) {
             e.printStackTrace();
         }
         return list;
+    }
+
+    public HelperDetail getHelper(User user) {
+        HelperDetail helper = null;
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistence");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        try {
+            TypedQuery<HelperDetail> query1 = entityManager.createQuery("SELECT u FROM HelperDetail u where u.user =:user", HelperDetail.class);
+            query1.setParameter("user", user);
+
+            helper = query1.getSingleResult();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return helper;
     }
 }

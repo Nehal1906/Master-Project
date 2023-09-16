@@ -127,4 +127,74 @@ public class UserController implements Serializable {
         return Response.ok(json, MediaType.APPLICATION_JSON).build();
     }
 
+    
+     @POST
+    @Path("updateprofile")
+    public Response updateProfile(User user) {
+
+        userRepository = new UserRepository();
+        user.IsSeeker = true;
+        user.IsHelper = false;
+        APIResponse res = userRepository.updateProfile(user);
+        // this.user = userRepository.findAll();
+        // this.user = new User();
+
+        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        String json = "{}";
+        try {
+            json = ow.writeValueAsString(res);
+            json = ow.writeValueAsString(res);
+        } catch (JsonProcessingException ex) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return Response.ok(json, MediaType.APPLICATION_JSON).build();
+    }
+    
+    
+    @POST
+    @Path("changepassword")
+    public Response changePassword(User user) {
+
+        userRepository = new UserRepository();
+        user.IsSeeker = true;
+        user.IsHelper = false;
+        APIResponse res = userRepository.changePassword(user);
+        // this.user = userRepository.findAll();
+        // this.user = new User();
+
+        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        String json = "{}";
+        try {
+            json = ow.writeValueAsString(res);
+            json = ow.writeValueAsString(res);
+        } catch (JsonProcessingException ex) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return Response.ok(json, MediaType.APPLICATION_JSON).build();
+    }
+    
+     @POST
+    @Path("forgot")
+    public Response forgotPassword(User user) {
+
+        userRepository = new UserRepository();
+        user.IsSeeker = true;
+        user.IsHelper = false;
+        APIResponse res = userRepository.forgotPassword(user);
+        // this.user = userRepository.findAll();
+        // this.user = new User();
+
+        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        String json = "{}";
+        try {
+            json = ow.writeValueAsString(res);
+            json = ow.writeValueAsString(res);
+        } catch (JsonProcessingException ex) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return Response.ok(json, MediaType.APPLICATION_JSON).build();
+    }
 }

@@ -8,8 +8,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.project.yourally.entity.Appointment;
+import com.project.yourally.entity.HelperDetail;
 import com.project.yourally.entity.User;
 import com.project.yourally.repository.AppointmentRepository;
+import com.project.yourally.repository.HelperDetailRepository;
 import com.project.yourally.utils.APIResponse;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -26,19 +28,19 @@ import java.util.logging.Logger;
  * @author Admin
  */
 @Path("book")
-public class AppointmentController implements Serializable  {
-    
-     private static final long serialVersionUID = 1L;
+public class AppointmentController implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     @POST
     @Path("newbook")
-    public Response bookNow(Appointment appointment)
-    {
-        APIResponse res= new APIResponse();
-        
+    public Response bookNow(Appointment appointment) {
+        APIResponse res = new APIResponse();
+
         AppointmentRepository respository = new AppointmentRepository();
         res = respository.createAppointment(appointment);
-        
-          ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+
+        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
         String json = "{}";
         try {
             json = ow.writeValueAsString(res);
@@ -48,28 +50,73 @@ public class AppointmentController implements Serializable  {
         }
 
         return Response.ok(json, MediaType.APPLICATION_JSON).build();
-      
+
     }
-    
+
     @POST
     @Path("listbyuser")
-    public Response getBookingByUser(User user)
-    {
+    public Response getBookingByUser(User user) {
         AppointmentRepository respository = new AppointmentRepository();
-        List<Appointment> list= null;
-         list = respository.getUserAppointment(user);
-        
-       
+        List<Appointment> list = null;
+        list = respository.getUserAppointment(user);
+
         ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
         String json = "{}";
         try {
-          
+
             json = ow.writeValueAsString(list);
         } catch (JsonProcessingException ex) {
             Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return Response.ok(json, MediaType.APPLICATION_JSON).build();
-        
+
+    }
+
+    @POST
+    @Path("listbyhelper")
+    public Response getBookingByHelper(User user) {
+        AppointmentRepository respository = new AppointmentRepository();
+        HelperDetailRepository helprerepo = new HelperDetailRepository();
+
+        List<Appointment> list = null;
+        HelperDetail helper = helprerepo.getHelper(user);
+
+        if (helper != null) {
+            list = respository.getHelperrAppointment(helper);
+        }
+
+        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        String json = "{}";
+        try {
+
+            json = ow.writeValueAsString(list);
+        } catch (JsonProcessingException ex) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return Response.ok(json, MediaType.APPLICATION_JSON).build();
+
+    }
+
+    @POST
+    @Path("cancel")
+    public Response closeAppointment(Appointment app) {
+        AppointmentRepository respository = new AppointmentRepository();
+        boolean result = respository.closeAppointment(app);
+
+        APIResponse res= new APIResponse();
+        res.setCode(0);
+        res.setMessage("Changed");
+        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        String json = "{}";
+        try {
+
+            json = ow.writeValueAsString(res);
+        } catch (JsonProcessingException ex) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return Response.ok(json, MediaType.APPLICATION_JSON).build();
     }
 }

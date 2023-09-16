@@ -23,6 +23,20 @@ $(document).ready(function(){
                         success: function (data) {
 
                            $("#username").html(data.FirstName+" "+ data.LastName);
+                           if(data.IsHelper == true)
+                           {
+                               $("#label1").html("Helper ");
+                               $("#consult").hide();
+                               $("#appointmentseeker").hide();
+                               $("#appointmenthelper").show();
+                           }
+                           else
+                           {
+                               $("#label1").html("Seeker ");
+                               $("#consult").show();
+                               $("#appointmentseeker").show();
+                               $("#appointmenthelper").hide();
+                           }
                          
                         },
                         error: function (jqXHR, exception) {
