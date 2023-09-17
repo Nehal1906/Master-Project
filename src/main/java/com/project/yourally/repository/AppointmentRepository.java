@@ -142,12 +142,14 @@ public class AppointmentRepository implements Serializable {
             HelperDetail hlp1 = query2.getSingleResult();
 
             String subject = "Your Appointment Booked";
-            String content = "Hi,<br/>Your Appointment from " + ap1.FirstName + " with " + hlp1.getUserId().FirstName + ", in YourAlly is booked for " + app.Problem + " on " + app.AppointmentDate;
+            String contentuser = "Hi,<br/>Your Appointment for " + app.Problem + " has been booked with " + hlp1.getUserId().FirstName + ", in YourAlly on " + app.AppointmentDate;
+            String contenthelper = "Hi,<br/> " + ap1.FirstName + " has been booked appointment with you for " + app.Problem + ", in YourAlly on " + app.AppointmentDate;
+            
 
             SendMail mail = new SendMail();
 
-            mail.sendemail(ap1.Email, subject, content);
-            mail.sendemail(hlp1.getUserId().Email, subject, content);
+            mail.sendemail(ap1.Email, subject, contentuser);
+            mail.sendemail(hlp1.getUserId().Email, subject, contenthelper);
         } catch (Exception e) {
             e.printStackTrace();
             res.setCode(0);

@@ -154,7 +154,7 @@ public class UserRepository implements Serializable {
             }
             else
             {
-                res.setCode(0);
+                res.setCode(1);
                 res.setMessage("Invalid Details");
                 return res;
             }
@@ -201,7 +201,7 @@ public class UserRepository implements Serializable {
                 mail.sendemail(user1.Email, subject, content);
                 return res;
             } else {
-                res.setCode(0);
+                res.setCode(1);
                 res.setMessage("Invalid Details");
                 return res;
             }
