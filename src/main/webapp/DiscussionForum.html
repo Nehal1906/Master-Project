@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>YourAlly</title>
+        <!-- plugins:css --> 
+        <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
+        <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+        <!-- endinject -->
+        <!-- Plugin css for this page -->
+        <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+        <!-- End plugin css for this page -->
+        <!-- inject:css -->
+        <!-- endinject -->
+        <!-- Layout styles -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href="assets/css/CustomStyle.css" rel="stylesheet" type="text/css"/>
+        <!-- End layout styles --> 
+        <link rel="shortcut icon" href="assets/images/favicon.png" />
+        <style>
+
+            /* CSS talk bubble */
+            .talk-bubble {
+                margin: 10px;
+                display: inline-block;
+                position: relative;
+                width: 200px;
+                height: auto;
+                background-color: lightyellow;
+            }
+            .border{
+                border: 8px solid #666;
+            }
+            .round{
+                border-radius: 30px;
+                -webkit-border-radius: 30px;
+                -moz-border-radius: 30px;
+
+            }
+
+            /* Right triangle placed top left flush. */
+            .tri-right.border.left-top:before {
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: -10px;
+                right: auto;
+                top: -8px;
+                bottom: auto;
+                border: 32px solid;
+                border-color: #666 transparent transparent transparent;
+            }
+            .tri-right.left-top:after{
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: -20px;
+                right: auto;
+                top: 0px;
+                bottom: auto;
+                border: 22px solid;
+                border-color: lightyellow transparent transparent transparent;
+            }
+
+            /* Right triangle, left side slightly down */
+            .tri-right.border.left-in:before {
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: -40px;
+                right: auto;
+                top: 30px;
+                bottom: auto;
+                border: 20px solid;
+                border-color: #666 #666 transparent transparent;
+            }
+            .tri-right.left-in:after{
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: -20px;
+                right: auto;
+                top: 38px;
+                bottom: auto;
+                border: 12px solid;
+                border-color: lightyellow lightyellow transparent transparent;
+            }
+
+            /*Right triangle, placed bottom left side slightly in*/
+            .tri-right.border.btm-left:before {
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: -8px;
+                right: auto;
+                top: auto;
+                bottom: -20px;
+                border: 32px solid;
+                border-color: transparent transparent transparent #666;
+            }
+            .tri-right.btm-left:after{
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: 0px;
+                right: auto;
+                top: auto;
+                bottom: -20px;
+                border: 22px solid;
+                border-color: transparent transparent transparent lightyellow;
+            }
+
+            /*Right triangle, placed bottom left side slightly in*/
+            .tri-right.border.btm-left-in:before {
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: 30px;
+                right: auto;
+                top: auto;
+                bottom: -40px;
+                border: 20px solid;
+                border-color: #666 transparent transparent #666;
+            }
+            .tri-right.btm-left-in:after{
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: 38px;
+                right: auto;
+                top: auto;
+                bottom: -20px;
+                border: 12px solid;
+                border-color: lightyellow transparent transparent lightyellow;
+            }
+
+            /*Right triangle, placed bottom right side slightly in*/
+            .tri-right.border.btm-right-in:before {
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: auto;
+                right: 30px;
+                bottom: -40px;
+                border: 20px solid;
+                border-color: #666 #666 transparent transparent;
+            }
+            .tri-right.btm-right-in:after{
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: auto;
+                right: 38px;
+                bottom: -20px;
+                border: 12px solid;
+                border-color: lightyellow lightyellow transparent transparent;
+            }
+            /*
+                    left: -8px;
+              right: auto;
+              top: auto;
+                    bottom: -40px;
+                    border: 32px solid;
+                    border-color: transparent transparent transparent #666;
+                    left: 0px;
+              right: auto;
+              top: auto;
+                    bottom: -20px;
+                    border: 22px solid;
+                    border-color: transparent transparent transparent lightyellow;
+            
+            /*Right triangle, placed bottom right side slightly in*/
+            .tri-right.border.btm-right:before {
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: auto;
+                right: -8px;
+                bottom: -40px;
+                border: 20px solid;
+                border-color: #666 #666 transparent transparent;
+            }
+            .tri-right.btm-right:after{
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: auto;
+                right: 0px;
+                bottom: -20px;
+                border: 12px solid;
+                border-color: lightyellow lightyellow transparent transparent;
+            }
+
+            /* Right triangle, right side slightly down*/
+            .tri-right.border.right-in:before {
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: auto;
+                right: -40px;
+                top: 30px;
+                bottom: auto;
+                border: 20px solid;
+                border-color: #666 transparent transparent #666;
+            }
+            .tri-right.right-in:after{
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: auto;
+                right: -20px;
+                top: 38px;
+                bottom: auto;
+                border: 12px solid;
+                border-color: lightyellow transparent transparent lightyellow;
+            }
+
+            /* Right triangle placed top right flush. */
+            .tri-right.border.right-top:before {
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: auto;
+                right: -40px;
+                top: -8px;
+                bottom: auto;
+                border: 32px solid;
+                border-color: #666 transparent transparent transparent;
+            }
+            .tri-right.right-top:after{
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: auto;
+                right: -20px;
+                top: 0px;
+                bottom: auto;
+                border: 20px solid;
+                border-color: lightyellow transparent transparent transparent;
+            }
+
+            /* talk bubble contents */
+            .talktext{
+                padding: 1em;
+                text-align: left;
+                line-height: 1.5em;
+            }
+            .talktext p{
+                /* remove webkit p margins */
+                -webkit-margin-before: 0em;
+                -webkit-margin-after: 0em;
+            }
+        </style>
+    </head>
+    <body> 
+        <div class="container-scroller">
+            <!-- partial:partials/_navbar.html -->
+            <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+                <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                    <a class="navbar-brand brand-logo" href="index.html"><img src="assets/logo.jpeg" alt="logo" /></a>
+                    <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/logo.jpeg" alt="logo" /></a>
+                </div>
+                <div class="navbar-menu-wrapper d-flex align-items-stretch">
+                    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                        <span class="mdi mdi-menu"></span>
+                    </button> 
+                     <ul class="navbar-nav navbar-nav-right"> 
+                        <li class="nav-item nav-profile dropdown">
+                            <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                                <div class="nav-profile-img">
+                                     <img src="assets/photos/nehal.png" alt="">
+                                </div>
+                                <div class="nav-profile-text">
+                                    <p class="mb-1 text-black" id="username">User</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu navbar-dropdown dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="profileDropdown" data-x-placement="bottom-end">
+                                <div class="p-3 text-center bg-primary">
+                                    <img class="img-avatar img-avatar48 img-avatar-thumb" src="assets/photos/nehal.png" alt="">
+                                </div>
+                                <div class="p-2">
+                                    <h5 class="dropdown-header text-uppercase pl-2 text-dark">User Options</h5>
+                                    <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="UserProfile.html">
+                                        <span>Profile</span>
+                                        <span class="p-0">
+                                           
+                                            <i class="mdi mdi-account-outline ml-1"></i>
+                                        </span>
+                                    </a>
+                                  
+                                    <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="ChangePassword.html">
+                                        <span>Change Password</span>
+                                        <i class="mdi mdi-settings"></i>
+                                    </a>
+                                   
+                                    <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="Login.html">
+                                        <span>Log Out</span>
+                                        <i class="mdi mdi-logout ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                  
+                    </ul>
+                    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                        <span class="mdi mdi-menu"></span>
+                    </button>
+                </div>
+            </nav>
+            <!-- partial -->
+            <div class="container-fluid page-body-wrapper">
+                <!-- partial:partials/_sidebar.html -->
+                <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                    <ul class="nav"> 
+                        <li class="nav-item nav-category"></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="MainDashboard.html">
+                                <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
+                                <span class="menu-title">Dashboard</span>
+                            </a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="Resources.html">
+                                <span class="icon-bg"><i class="mdi mdi-contacts menu-icon"></i></span>
+                                <span class="menu-title">Self-Care Resources</span>
+                            </a> 
+                        </li>
+                        <li class="nav-item" id="consult">
+                            <a class="nav-link" href="ProfessionalHelp.html">
+                                <span class="icon-bg"><i class="mdi mdi-format-list-bulleted menu-icon"></i></span>
+                                <span class="menu-title">Professional Consultations</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" id="appointmentseeker">
+                            <a class="nav-link" href="AppointmentStatus.html">
+                                <span class="icon-bg"><i class="mdi mdi-format-list-bulleted menu-icon"></i></span>
+                                <span class="menu-title">My Appointments</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item" id="appointmenthelper">
+                            <a class="nav-link" href="HelperAppointments.html">
+                                <span class="icon-bg"><i class="mdi mdi-format-list-bulleted menu-icon"></i></span>
+                                <span class="menu-title">Appointments</span>
+                            </a>
+                        </li>
+                       
+                    </ul>
+                </nav>
+
+                <!-- partial -->
+                <div class="main-panel">
+                    <div class="content-wrapper" style="height:auto;max-height:80%"> 
+                        <div class="d-xl-flex justify-content-between align-items-start">
+                            <h2 class="text-dark font-weight-bold mb-2"> Engagement Space </h2> 
+                        </div>
+                        <input type="hidden" id="disid" />
+                        <div class="card ">
+                            <h3 id="title" class="p-2"></h3>
+                        </div>
+
+                        <div id="messages" class="row" style="height:auto;max-height:80%;overflow:auto">
+                            No Messages in the Room
+
+                            <p>This one adds a right triangle on the left, flush at the top by using .tri-right and .left-top to specify the location.</p>
+
+                        </div>
+                    </div>
+                    <!-- content-wrapper ends -->
+                    <!-- partial:partials/_footer.html -->
+                    <div class="row m-2">
+                        <div class="col-md-10">
+                            <textarea class="form-control" id="message" ></textarea>        
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-primary mt-2" id="send">Send</button>
+                        </div>
+                    </div>
+
+                    <footer class="footer">
+
+                        <div class="footer-inner-wraper">
+                            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2023</span>
+                                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> YourAlly </span>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- partial -->
+                </div>
+                <!-- main-panel ends -->
+            </div>
+            <!-- page-body-wrapper ends -->
+        </div>
+        <!-- container-scroller -->
+        <!-- plugins:js -->
+        <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page -->
+        <script src="assets/vendors/chart.js/Chart.min.js"></script>
+        <script src="assets/vendors/jquery-circle-progress/js/circle-progress.min.js"></script>
+        <!-- End plugin js for this page -->
+        <!-- inject:js -->
+        <script src="assets/js/off-canvas.js"></script>
+        <script src="assets/js/hoverable-collapse.js"></script>
+        <script src="assets/js/misc.js"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page -->
+        <script src="assets/js/dashboard.js"></script>
+        <!-- End custom js for this page -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="assets/js/userinfo.js"></script>
+
+        <script>
+            $(document).ready(function () {
+
+                function loadData()
+                {
+                    let searchParams = new URLSearchParams(window.location.search);
+                    if (searchParams.has('apid'))
+                    {
+                        var appointmentid = searchParams.get('apid');
+                        var ownuserid = $.cookie("userid");
+                        
+                        var url = 'api/discussion/load';
+                        var formData = {AppointmentId: appointmentid};
+                        $.ajax({
+                            url: url,
+                            type: 'post',
+                            dataType: 'json',
+                            data: JSON.stringify(formData),
+                            contentType: "application/json",
+                            success: function (data) {
+
+                                $("#title").html(data.dis.Description + " for " + data.dis.AppointmentId.Problem);
+                                $("#disid").val(data.dis.DiscussionForumId);
+                                var html = "<h3 class='m-3 p-3'>This Board has no message Yet</h3>";
+                                for (i = 0; i < data.messagelist.length; i++)
+                                {
+                                    if(i==0)
+                                    {
+                                        html="";
+                                    }
+
+                                    var dt = new Date(data.messagelist[i].CreatedDate);
+                                    if (ownuserid != data.messagelist[i].UserId.UserId)
+                                    {
+                                        html += '<div class="talk-bubble tri-right left-top col-11 justify-content-end">';
+                                        html += '<div class="talktext">';
+                                        html += '<p><big>' + data.messagelist[i].Description + '</big></p>';
+                                        html += "<p>By " + data.messagelist[i].UserId.FirstName + " " + data.messagelist[i].UserId.LastName + " at " + dt.toLocaleString();
+                                        html += '</div>';
+                                        html += '</div>';
+                                    } else
+                                    {
+                                        html += "<div class='col-2'></div>";
+                                        html += '<div class="talk-bubble tri-right left-in col-9  justify-content-end">';
+                                        html += '<div class="talktext">';
+                                        html += '<p><big>' + data.messagelist[i].Description + '</big></p>';
+                                        html += "<p>By " + data.messagelist[i].UserId.FirstName + " " + data.messagelist[i].UserId.LastName + " at " + dt.toLocaleString();
+                                        html += '</div>';
+                                        html += '</div>';
+                                    }
+                                }
+                                
+                                $("#messages").html(html);
+                            }
+
+                        });
+                    }
+                }
+
+
+                $("#send").on('click', function (e) {
+
+                    var msg = $("#message").val();
+                    if($.trim(msg).length == 0)
+                    {
+                        return;
+                    }
+                    var userid = $.cookie("userid");
+                    var disid = $("#disid").val();
+                    var url = "api/discussion/send";
+                    var formData = {Description: msg, UserId: userid, DiscussionForumId: disid};
+                    $.ajax({
+
+                        url: url,
+                        type: 'post',
+                        dataType: 'json',
+                        data: JSON.stringify(formData),
+                        contentType: "application/json",
+                        success: function (data) {
+                            
+                            loadData();
+                            $("#message").val('');
+                        }
+                    });
+                });
+                loadData();
+            });
+        </script>
+    </body>
+</html>

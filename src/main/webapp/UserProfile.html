@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>YourAlly</title>
+        <!-- plugins:css --> 
+        <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
+        <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+        <!-- endinject -->
+        <!-- Plugin css for this page -->
+        <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+        <!-- End plugin css for this page -->
+        <!-- inject:css -->
+        <!-- endinject -->
+        <!-- Layout styles -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href="assets/css/CustomStyle.css" rel="stylesheet" type="text/css"/>
+        <!-- End layout styles --> 
+        <link rel="shortcut icon" href="assets/images/favicon.png" />
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker3.min.css" integrity="sha512-aQb0/doxDGrw/OC7drNaJQkIKFu6eSWnVMAwPN64p6sZKeJ4QCDYL42Rumw2ZtL8DB9f66q4CnLIUnAw28dEbg==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+    </head>
+    <body> 
+        <div class="container-scroller">
+            <!-- partial:partials/_navbar.html -->
+            <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+                <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                    <a class="navbar-brand brand-logo" href="index.html"><img src="assets/logo.jpeg" alt="logo" /></a>
+                    <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/logo.jpeg" alt="logo" /></a>
+                </div>
+                <div class="navbar-menu-wrapper d-flex align-items-stretch">
+                    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                        <span class="mdi mdi-menu"></span>
+                    </button> 
+                   <ul class="navbar-nav navbar-nav-right"> 
+                        <li class="nav-item nav-profile dropdown">
+                            <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                                <div class="nav-profile-img">
+                                     <img src="assets/photos/nehal.png" alt="">
+                                </div>
+                                <div class="nav-profile-text">
+                                    <p class="mb-1 text-black" id="username">User</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu navbar-dropdown dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="profileDropdown" data-x-placement="bottom-end">
+                                <div class="p-3 text-center bg-primary">
+                                    <img class="img-avatar img-avatar48 img-avatar-thumb" src="assets/photos/nehal.png" alt="">
+                                </div>
+                                <div class="p-2">
+                                    <h5 class="dropdown-header text-uppercase pl-2 text-dark">User Options</h5>
+                                    <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="UserProfile.html">
+                                        <span>Profile</span>
+                                        <span class="p-0">
+                                           
+                                            <i class="mdi mdi-account-outline ml-1"></i>
+                                        </span>
+                                    </a>
+                                  
+                                    <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="ChangePassword.html">
+                                        <span>Change Password</span>
+                                        <i class="mdi mdi-settings"></i>
+                                    </a>
+                                   
+                                    <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="Login.html">
+                                        <span>Log Out</span>
+                                        <i class="mdi mdi-logout ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                  
+                    </ul>
+                    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                        <span class="mdi mdi-menu"></span>
+                    </button>
+                </div>
+            </nav>
+            <!-- partial -->
+            <div class="container-fluid page-body-wrapper">
+                <!-- partial:partials/_sidebar.html -->
+                <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                    <ul class="nav"> 
+                        <li class="nav-item nav-category"></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="MainDashboard.html">
+                                <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
+                                <span class="menu-title">Dashboard</span>
+                            </a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="Resources.html">
+                                <span class="icon-bg"><i class="mdi mdi-contacts menu-icon"></i></span>
+                                <span class="menu-title">Self-Care Resources</span>
+                            </a> 
+                        </li>
+                        <li class="nav-item" id="consult">
+                            <a class="nav-link" href="ProfessionalHelp.html">
+                                <span class="icon-bg"><i class="mdi mdi-format-list-bulleted menu-icon"></i></span>
+                                <span class="menu-title">Professional Consultations</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" id="appointmentseeker">
+                            <a class="nav-link" href="AppointmentStatus.html">
+                                <span class="icon-bg"><i class="mdi mdi-format-list-bulleted menu-icon"></i></span>
+                                <span class="menu-title">My Appointments</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item" id="appointmenthelper">
+                            <a class="nav-link" href="HelperAppointments.html">
+                                <span class="icon-bg"><i class="mdi mdi-format-list-bulleted menu-icon"></i></span>
+                                <span class="menu-title">Appointments</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+
+                <!-- partial -->
+                <div class="main-panel">
+                    <div class="content-wrapper"> 
+                        <div class="d-xl-flex justify-content-between align-items-start">
+                            <h2 class="text-dark font-weight-bold mb-2"> User Profile </h2> 
+                        </div>
+                        <div class="row">
+                            <div class="col-12 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Update Profile</h4> 
+                                        <form class="forms-sample" id="userform">
+                                            <input id="userid" type="hidden"/>
+
+                                            <div class="row">
+                                                <div class="col-xl-3 col-lg-3 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputName1">First Name</label>
+
+                                                        <input type="text" class="form-control" id="FirstName" placeholder="First Name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputName1">Last Name</label>
+                                                        <input type="text" class="form-control" id="LastName" placeholder="Last Name">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl-6 col-lg-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputName1">Address</label>
+                                                        <input type="text" class="form-control" id="Address" placeholder="Address">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-2 col-lg-2 col-sm-4">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputName1">Date of Birth</label>
+                                                        <input type="date" class="form-control" id="Dateofbirth" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-2 col-lg-2 col-sm-4">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail3">Phone Number</label>
+                                                        <input type="text" class="form-control" id="PhoneNumber" placeholder="Phone Number">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail3">Email</label>
+                                                        <input readonly="readonly" type="email" class="form-control" id="Email" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail3">Gender</label>
+                                                        <select class="form-control form-control-lg" id="Gender">
+                                                            <option value="">Select</option>
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
+                                                            <option value="Other">Other</option> 
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <button id="Submit" type="submit" class="btn btn-primary mr-2">Submit</button> 
+                                        </form>
+                                        <div id="message" class="mt-2" style="overflow-wrap: break-word;">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- content-wrapper ends -->
+                    <!-- partial:partials/_footer.html -->
+                    <footer class="footer">
+                        <div class="footer-inner-wraper">
+                            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2023</span>
+                                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> YourAlly </span>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- partial -->
+                </div>
+                <!-- main-panel ends -->
+            </div>
+            <!-- page-body-wrapper ends -->
+        </div>
+        <!-- container-scroller -->
+        <!-- plugins:js -->
+        <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page -->
+        <script src="assets/vendors/chart.js/Chart.min.js"></script>
+        <script src="assets/vendors/jquery-circle-progress/js/circle-progress.min.js"></script>
+        <!-- End plugin js for this page -->
+        <!-- inject:js -->
+        <script src="assets/js/off-canvas.js"></script>
+        <script src="assets/js/hoverable-collapse.js"></script>
+        <script src="assets/js/misc.js"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page -->
+        <script src="assets/js/dashboard.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/locales/bootstrap-datepicker.en-AU.min.js" integrity="sha512-ghvIK/3dPoQzHCrGQxvxAeTtLGNHobiKoLA8tdztoqiiINxSre6RiloNaN6uVLg1ESyBiZh7rnmRBa+psz85Zw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+        <!-- End custom js for this page -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src="assets/js/userinfo.js"></script>
+    </body>
+</html>
+
+<script>
+    $(document).ready(function () {
+
+        var url = "api/user/getuser";
+
+        var userid = $.cookie("userid");
+
+
+        var formData = {UserId: userid};
+
+        $.ajax({
+            cache: false,
+            url: url,
+            type: 'POST',
+            dataType: 'json',
+            data: JSON.stringify(formData),
+            contentType: "application/json",
+            success: function (data) {
+                var date = new Date(data.Dateofbirth);
+                date = date.getFullYear().toString() +
+                        "-" + ((date.getMonth() + 1).toString().length == 2 ? (date.getMonth() + 1).toString() : "0" + (date.getMonth() + 1).toString()) +
+                        "-" + (date.getDate().toString().length == 2 ? date.getDate().toString() : "0" + date.getDate().toString());
+
+                $("#userid").val(data.UserId);
+                $("#username").html(data.FirstName + " " + data.LastName);
+                $("#FirstName").val(data.FirstName);
+                $("#LastName").val(data.LastName);
+                $("#Address").val(data.Address);
+                $("#PhoneNumber").val(data.PhoneNumber);
+                $("#Email").val(data.Email);
+                $("#Gender").val(data.Gender);
+                $("#Dateofbirth").val(date.toLocaleString());
+
+            },
+            error: function (jqXHR, exception) {
+
+
+            }
+
+        });
+
+
+        $("#Submit").on("click", function (e) {
+
+            e.preventDefault();
+            var UserId = $("#userid").val();
+            var FirstName = $("#FirstName").val();
+            var LastName = $("#LastName").val();
+            var Gender = $("#Gender").val();
+            var Email = $("#Email").val();
+            var PhoneNumber = $("#PhoneNumber").val();
+            var Dateofbirth = $("#Dateofbirth").val();
+            var Address = $("#Address").val();
+
+            var formData = {UserId: UserId, FirstName: FirstName, LastName: LastName, Gender: Gender, Email: Email, PhoneNumber: PhoneNumber, Dateofbirth: Dateofbirth, Address: Address};
+
+            var url = "api/user/updateprofile";
+
+            //   debugger;
+            //var form = $("form.form-create");
+            //if (!form.valid()) {
+            //    return false;
+            //}
+            $.ajax({
+                cache: false,
+                url: url,
+                type: 'POST',
+                dataType: 'json',
+                data: JSON.stringify(formData),
+                contentType: "application/json",
+                success: function (data) {
+
+                    if (data.code == 0)
+                    {
+                        $("#message").addClass("text-danger");
+                        $("#message").html(data.message);
+
+                    } else
+                    {
+                        $("#message").addClass("text-success");
+                        $("#message").html(data.message);
+
+                    }
+
+                },
+                error: function (jqXHR, exception) {
+                    $("#message").addClass("text-danger");
+                    $("#message").html(exception);
+                }
+
+            });
+
+        });
+    });
+</script>
