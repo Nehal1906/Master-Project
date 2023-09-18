@@ -19,6 +19,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,6 +35,7 @@ public class AppointmentController implements Serializable {
         APIResponse res = new APIResponse();
 
         AppointmentRepository respository = new AppointmentRepository();
+        appointment.CreatedDate = new Date();
         res = respository.createAppointment(appointment);
 
         ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();

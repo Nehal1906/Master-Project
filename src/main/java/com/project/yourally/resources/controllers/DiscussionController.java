@@ -17,6 +17,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
  
@@ -29,6 +30,7 @@ public class DiscussionController implements Serializable {
     @Path("load")
     public Response getOrCreateBoard(Appointment app) {
         DiscussionRepository rep = new DiscussionRepository();
+        app.CreatedDate = new Date();
         Board board = rep.getOrCreateDiscussionForum(app);
         ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
         String json = "{}";
@@ -49,7 +51,7 @@ public class DiscussionController implements Serializable {
         DiscussionRepository rep = new DiscussionRepository();
         
         APIResponse res= new APIResponse();
-        
+        message.CreatedDate = new Date();
         res = rep.saveMessage(message);
         ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
         String json = "{}";
