@@ -21,9 +21,18 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
- 
+
+/*
+    this is appointment repository 
+    create appointment, update status
+    get helper and seeker appointment 
+    functionality done
+*/
 public class AppointmentRepository implements Serializable {
 
+    /*
+        update status by time method set the appointment status 
+    */
     public void updateStatusByTime(Appointment app) {
         Date current = new Date();
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistence");
@@ -48,6 +57,9 @@ public class AppointmentRepository implements Serializable {
 
     }
 
+     /*
+        getUserAppointment method returns the list of logged in user appointments. 
+    */
     public List<Appointment> getUserAppointment(User user) {
         List<Appointment> list = null;
         List<Appointment> updatedlist = new ArrayList<>();
@@ -74,6 +86,9 @@ public class AppointmentRepository implements Serializable {
         return list;
     }
 
+     /*
+        getHelperrAppointment method returns the list of logged in helper appointments. 
+    */
     public List<Appointment> getHelperrAppointment(HelperDetail helperId) {
         List<Appointment> list = null;
         List<Appointment> updatedlist = new ArrayList<>();
@@ -101,6 +116,9 @@ public class AppointmentRepository implements Serializable {
         return updatedlist;
     }
 
+     /*
+        createAppointment method use to add new data in databas eand retunrn string message 
+    */
     public APIResponse createAppointment(Appointment app) {
         APIResponse res = new APIResponse();
 
@@ -153,6 +171,9 @@ public class AppointmentRepository implements Serializable {
         return res;
     }
 
+     /*
+        closeAppointment method change the appointment status
+    */
     public boolean closeAppointment(Appointment app) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistence");

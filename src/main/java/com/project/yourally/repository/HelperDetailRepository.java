@@ -12,9 +12,18 @@ import jakarta.persistence.Persistence;
 import jakarta.persistence.TypedQuery;
 import java.io.Serializable;
 import java.util.List;
- 
+
+/*
+    this is helper detail repository 
+    get all helpers and
+    get helper by user id
+    functionality done
+*/
 public class HelperDetailRepository implements Serializable {
 
+    /*
+        getAllHelpers method return the list of helpers
+    */
     public List<HelperDetail> getAllHelpers() {
         List<HelperDetail> list = null;
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistence");
@@ -30,6 +39,9 @@ public class HelperDetailRepository implements Serializable {
         return list;
     }
 
+     /*
+        getAllHelpers method return the helper detail using user id
+    */
     public HelperDetail getHelper(User user) {
         HelperDetail helper = null;
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistence");

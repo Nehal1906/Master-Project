@@ -24,25 +24,22 @@ import java.security.Principal;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
- 
+
 @Path("user")
 
 public class UserController implements Serializable {
 
     private static final long serialVersionUID = 1L;
-   
 
     private String searchName;
 
     private UserRepository userRepository;
     private User user;
-//    
+     
 
-//    @PostConstruct
-//    public void init() {
-//            this.user = new User(); 
-//    }
-//    
+     /*
+        checkUser method return json object with logged in user credential authentication
+    */
     @POST
     @Path("login")
     public Response checkUser(User user) {
@@ -58,8 +55,6 @@ public class UserController implements Serializable {
             res.setMessage("Invalid Details Provided");
         } else if (user1.Password.equals(user.Password)) {
             res.setCode(user1.UserId);
-           
-           
 
             res.setMessage("Login Success");
         } else {
@@ -79,21 +74,23 @@ public class UserController implements Serializable {
         return Response.ok(json, MediaType.APPLICATION_JSON).build();
     }
 
-    
-        @POST
+    /*
+        getUserById method return json object with user object
+    */
+    @POST
     @Path("getuser")
     public Response getUserById(User user) {
         userRepository = new UserRepository();
         user.IsSeeker = true;
         user.IsHelper = false;
-      
+
         User user1 = userRepository.findById(user.UserId);
-       
+
         ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
         String json = "{}";
         try {
             json = ow.writeValueAsString(user1);
-            
+
         } catch (JsonProcessingException ex) {
             Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -101,6 +98,9 @@ public class UserController implements Serializable {
         return Response.ok(json, MediaType.APPLICATION_JSON).build();
     }
 
+    /*
+        createUser method return json object and create a new user
+    */
     @POST
     @Path("register")
     public Response createUser(User user) {
@@ -126,8 +126,10 @@ public class UserController implements Serializable {
         return Response.ok(json, MediaType.APPLICATION_JSON).build();
     }
 
-    
-     @POST
+    /*
+        updateProfile method return json object and update user details
+    */
+    @POST
     @Path("updateprofile")
     public Response updateProfile(User user) {
 
@@ -149,8 +151,10 @@ public class UserController implements Serializable {
 
         return Response.ok(json, MediaType.APPLICATION_JSON).build();
     }
-    
-    
+
+    /*
+        changePassword method return json object and change password
+    */
     @POST
     @Path("changepassword")
     public Response changePassword(User user) {
@@ -173,8 +177,11 @@ public class UserController implements Serializable {
 
         return Response.ok(json, MediaType.APPLICATION_JSON).build();
     }
-    
-     @POST
+
+    /*
+        forgotPassword method return json object
+    */
+    @POST
     @Path("forgot")
     public Response forgotPassword(User user) {
 

@@ -8,8 +8,8 @@ import java.util.List;
  
 public class Board {
  
-    private DiscussionForum dis;
-    private List<Message> messagelist;
+    private DiscussionForum dis; //variable for discussion forum class
+    private List<Message> messagelist; //list variable of message class
 
     /**
      * @return the dis

@@ -12,8 +12,16 @@ import jakarta.persistence.TypedQuery;
 import java.io.Serializable;
 import java.util.List;
  
+/*
+    this is resource repository 
+    get all resources  
+    functionality done
+*/
 public class ResourceRepository implements Serializable {
 
+     /*
+        getAll method return the list of resource
+    */
     public List<Resource> getAll() {
         List<Resource> list = null;
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistence");

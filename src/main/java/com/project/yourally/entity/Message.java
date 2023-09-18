@@ -17,7 +17,7 @@ public class Message {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer MessageId;
+    public Integer MessageId; //interger variable for message id
     
     @ManyToOne
     @JoinColumn(name = "UserId")
@@ -28,8 +28,8 @@ public class Message {
     @JoinColumn(name="DiscussionForumId")
     public DiscussionForum DiscussionForumId;
     
-    public String Description;
-    public Date CreatedDate;
-    public boolean IsDeleted ;
+    public String Description; //string variable for description
+    public Date CreatedDate;//date variable for created date
+    public boolean IsDeleted ; //boolean variable for is deleted
 
 }

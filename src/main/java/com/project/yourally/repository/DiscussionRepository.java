@@ -18,8 +18,18 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
  
+/*
+    this is discussion forum repository 
+    get and create a discussion forum,
+    save message to database
+    functionality done
+*/
 public class DiscussionRepository implements Serializable {
 
+    /*
+        getOrCreateDiscussionForum method create a discussion forum or get data 
+        if the discussion forum already created
+    */
     public Board getOrCreateDiscussionForum(Appointment app) {
 
         Board board = new Board();
@@ -71,6 +81,9 @@ public class DiscussionRepository implements Serializable {
         return board;
     }
 
+    /*
+        saveMessage method save the message in the database
+    */
     public APIResponse saveMessage(Message message) {
         APIResponse res = new APIResponse();
 

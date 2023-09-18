@@ -19,12 +19,12 @@ public class AppointmentStatus implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
    
 
-    private int appointmentId;
-    private int userId;
-    private int helperId;
-    private Date appointmentDate;
-    private String status;
-    private Date createdDate;
+    private int appointmentId; //integer variable of appointment id
+    private int userId; //integer variable of user id
+    private int helperId; //integer variable of helper id
+    private Date appointmentDate; //date variable of appointment date
+    private String status;// string variable of status
+    private Date createdDate;//date variable of created date
 
     public AppointmentStatus(String string) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

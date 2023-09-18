@@ -19,6 +19,14 @@ import java.io.Serializable;
 import java.util.Random;
 import org.jvnet.hk2.annotations.Service;
  
+/*
+    this is user repository 
+    set user data in database,
+    update profile,
+    find user by username, email, and id,
+    change password and forgot password
+    functionality done
+*/
 @Service
 public class UserRepository implements Serializable {
 
@@ -31,6 +39,9 @@ public class UserRepository implements Serializable {
         this.entityManager = entityManager;
     }
 
+    /*
+        setUserData method return string message and save data in the database
+    */
     public APIResponse setUserData(User user) {
 
         APIResponse res = new APIResponse();
@@ -40,7 +51,7 @@ public class UserRepository implements Serializable {
             entityManager.persist(user);
             entityManager.getTransaction().commit();
             res.setCode(1);
-            res.setMessage("Registration Success");
+            res.setMessage("Registration Success. Please click login button to logon in the system");
             return res;
         } catch (Exception e) {
 
@@ -58,6 +69,9 @@ public class UserRepository implements Serializable {
 
     }
 
+    /*
+        updateProfile method return string message and update data in the database
+    */
     public APIResponse updateProfile(User user) {
 
         APIResponse res = new APIResponse();
@@ -99,12 +113,18 @@ public class UserRepository implements Serializable {
         return res;
     }
 
+    /*
+        findByUsername method return user object which is find by user name
+    */
     public User findByUsername(String username) {
         TypedQuery<User> query = entityManager.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class);
         query.setParameter("username", username);
         return query.getSingleResult();
     }
 
+     /*
+        findByEmail method return user object which is find by email
+    */
     public User findByEmail(String email) {
         TypedQuery<User> query = entityManager.createQuery("SELECT u FROM User u WHERE u.Email = :email", User.class);
         query.setParameter("email", email);
@@ -117,6 +137,9 @@ public class UserRepository implements Serializable {
         }
     }
 
+    /*
+        findById method return user object which is find by user id
+    */
     public User findById(Integer UserId) {
         TypedQuery<User> query = entityManager.createQuery("SELECT u FROM User u WHERE u.UserId = :userid", User.class);
         query.setParameter("userid", UserId);
@@ -129,6 +152,9 @@ public class UserRepository implements Serializable {
         }
     }
 
+      /*
+        changePassword method return string message and update data in the database
+    */
     public APIResponse changePassword(User user) {
         APIResponse res = new APIResponse();
 
@@ -169,6 +195,10 @@ public class UserRepository implements Serializable {
         
     }
 
+    /*
+        forgotPassword method return string message and update data in the database 
+        and send mail to the updated password details
+    */
     public APIResponse forgotPassword(User user) {
      APIResponse res = new APIResponse();
 

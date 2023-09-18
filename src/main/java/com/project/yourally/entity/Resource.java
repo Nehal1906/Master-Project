@@ -18,11 +18,11 @@ public class Resource implements Serializable {
     private static long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ResourceId;
+    private Integer ResourceId; //integer variable for resource id
 
-    private String Title;
-    private String Description;
-    private String Url;
+    private String Title;//string variable for title
+    private String Description;//string variable for description
+    private String Url;//sting variable for url
 
     /**
      * @return the serialVersionUID

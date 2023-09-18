@@ -29,6 +29,9 @@ public class AppointmentController implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    /*
+        bookNow method return json object and send data to repo to save the data in database
+    */
     @POST
     @Path("newbook")
     public Response bookNow(Appointment appointment) {
@@ -51,6 +54,9 @@ public class AppointmentController implements Serializable {
 
     }
 
+    /*
+        getBookingByUser method return json object with user booked appointment
+    */ 
     @POST
     @Path("listbyuser")
     public Response getBookingByUser(User user) {
@@ -71,6 +77,9 @@ public class AppointmentController implements Serializable {
 
     }
 
+    /*
+        getBookingByHelper method return json object with helper detail
+    */
     @POST
     @Path("listbyhelper")
     public Response getBookingByHelper(User user) {
@@ -97,6 +106,9 @@ public class AppointmentController implements Serializable {
 
     }
 
+    /*
+        closeAppointment method return json object and cancel appointment
+    */
     @POST
     @Path("cancel")
     public Response closeAppointment(Appointment app) {

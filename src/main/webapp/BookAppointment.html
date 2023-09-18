@@ -29,6 +29,10 @@
             .form-group {
                 color: black;
             }
+            .p-3.text-center.bg-primary {
+                background-color: #EBE0D7 !important;
+            } 
+
         </style>
         
     </head>
@@ -45,6 +49,13 @@
                         <span class="mdi mdi-menu"></span>
                     </button> 
                     <ul class="navbar-nav navbar-nav-right"> 
+                         <li class="nav-item nav-language dropdown d-none d-md-block">
+                            <a class="nav-link" id="languageDropdown" href="index.html" aria-expanded="false">
+                                <div class="nav-language-icon">
+                                    <i class="mdi mdi-home menu-icon" title="home" id="home"></i>
+                                </div> 
+                            </a> 
+                        </li>
                         <li class="nav-item nav-profile dropdown">
                             <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                                 <div class="nav-profile-img">
@@ -119,7 +130,7 @@
                             </a>
                         </li>
                         
-                           <li class="nav-item" id="appointmenthelper">
+                           <li class="nav-item" id="appointmenthelper"  style="display: none;">
                             <a class="nav-link" href="HelperAppointments.html">
                                 <span class="icon-bg"><i class="mdi mdi-format-list-bulleted menu-icon"></i></span>
                                 <span class="menu-title">Appointments</span>

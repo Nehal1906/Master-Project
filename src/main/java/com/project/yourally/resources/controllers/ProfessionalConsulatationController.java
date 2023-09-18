@@ -30,6 +30,10 @@ import java.util.logging.Logger;
 public class ProfessionalConsulatationController extends HttpServlet{
 
     HelperDetailRepository helperRespository;
+    
+     /*
+        getAllHelper method return json object with helper details
+    */
     @GET
     @Path("list")
     public Response getAllHelper()
@@ -50,10 +54,5 @@ public class ProfessionalConsulatationController extends HttpServlet{
         }
 
         return Response.ok(json, MediaType.APPLICATION_JSON).build();
-    }
-   
-    
-    
-    
-    
+    } 
 }

@@ -26,6 +26,9 @@ public class DiscussionController implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    /*
+        getOrCreateBoard method return json object and get and create discussion board
+    */
     @POST
     @Path("load")
     public Response getOrCreateBoard(Appointment app) {
@@ -44,6 +47,9 @@ public class DiscussionController implements Serializable {
         return Response.ok(json, MediaType.APPLICATION_JSON).build();
     }
 
+    /*
+        sendMessage method return json object and save data in database
+    */
     @POST
     @Path("send")
     public Response sendMessage(Message message) {

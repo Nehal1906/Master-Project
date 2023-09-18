@@ -16,6 +16,9 @@ import java.util.List;
 @Path("resources")
 public class ResourceController {
 
+    /*
+        getAllResource method return json object with resource details
+    */
     @GET
     @Path("list")
     public Response getAllResource() {
