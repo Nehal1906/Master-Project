@@ -133,10 +133,10 @@ public class AppointmentRepository implements Serializable {
             System.out.println("Book " + appdate.toString());
 
             if (appdate.after(app.CreatedDate)) {
-                app.Status = "Schedule";
+                app.Status = "Scheduled";
             } else {
 
-                app.Status = "Complete";
+                app.Status = "Completed";
             }
 
             entityManager.getTransaction().begin();
@@ -191,7 +191,7 @@ public class AppointmentRepository implements Serializable {
         }
         if (ap1 != null) {
 
-            ap1.Status = "Cancel";
+            ap1.Status = "Cancelled";
             entityManager.getTransaction().begin();
             entityManager.persist(ap1);
             entityManager.getTransaction().commit();

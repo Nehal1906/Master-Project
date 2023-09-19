@@ -106,7 +106,7 @@
         $(document).ready(function () {
 
             $("#register").on("submit", function (e) {
-
+                e.preventDefault();
                 var msg = "";
                 $("#message").html("");
                 $("#message").removeClass("text-danger");
@@ -147,7 +147,7 @@
                     data: JSON.stringify(formData),
                     contentType: "application/json",
                     success: function (data) {
-
+                        debugger;
                         if (data.code == 0)
                         {
                             $("#message").addClass("text-danger");
@@ -155,8 +155,18 @@
 
                         } else
                         {
+                            debugger;
                             $("#message").addClass("text-success");
                             $("#message").html(data.message);
+                            
+                            $("#firstNameTxt").val('');
+                            $("#lasNameTxt").val('');
+                            $("#emailTxt").val('');
+                            $("#phoneTxt").val('');
+                            $("#adddressTxt").val('');
+                            $("#passwordTxt").val('');
+                            $("#dateOfBirthTxt").val('');
+                            $("#genderDropdown").val('');
 
                         }
 

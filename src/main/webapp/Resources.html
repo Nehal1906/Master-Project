@@ -104,7 +104,7 @@
                             </a>
                         </li> 
                         <li class="nav-item">
-                            <a class="nav-link" href="Resources.html">
+                            <a class="nav-link" href="Resources.html" id="resource">
                                 <span class="icon-bg"><i class="mdi mdi-contacts menu-icon"></i></span>
                                 <span class="menu-title">Self-Care Resources</span>
                             </a> 
@@ -203,12 +203,13 @@
                 var html = '';
                 for (i = 0; i < data.length; i++)
                 {
+                    //debugger;
                     //alert(data[i].userId.FirstName);
                     html += '<div class="col-xl-4 col-lg-6 col-sm-6 grid-margin stretch-card">';
                     html += '<div class="card">';
                     html += '<div class="card-body">';
                     html += '<h2 class="mb-2 text-dark font-weight-bold">' + data[i].title + '</h2>';
-                    html += '<p class="mt-4 mb-0 text-center"><a href="' + data[i].Url + '">Click here to see the article</a> </p>';
+                    html += '<p class="mt-4 mb-0 text-center"><a href="' + data[i].url + '" target="_blank">Click here to see the article</a> </p>';
                     html += '</div>';
                     html += '</div>';
                     html += '</div>';

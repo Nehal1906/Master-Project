@@ -112,7 +112,7 @@
                             </a>
                         </li> 
                         <li class="nav-item">
-                            <a class="nav-link" href="Resources.html">
+                            <a class="nav-link" href="Resources.html" id="resource">
                                 <span class="icon-bg"><i class="mdi mdi-contacts menu-icon"></i></span>
                                 <span class="menu-title">Self-Care Resources</span>
                             </a> 
@@ -268,6 +268,10 @@
         $("#bookform").on('submit', function (e) {
 
             e.preventDefault();
+
+            $("#message").html("");
+            $("#message").removeClass("text-danger");
+            $("#message").removeClass("text-success");
 
             var userid = $("#userid").val();
              

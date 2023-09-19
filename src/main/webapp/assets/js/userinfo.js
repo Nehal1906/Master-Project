@@ -27,15 +27,19 @@ $(document).ready(function(){
                            {
                                $("#label1").html("Helper ");
                                $("#consult").hide();
+                               $("#resource").hide(); 
                                $("#appointmentseeker").hide();
                                $("#appointmenthelper").show();
+                               $("#helperImage").show();
                            }
                            else
                            {
                                $("#label1").html("Seeker ");
                                $("#consult").show();
+                               $("#resource").show();
                                $("#appointmentseeker").show();
                                $("#appointmenthelper").hide();
+                               $("#seekerImage").show();
                            }
                          
                         },
