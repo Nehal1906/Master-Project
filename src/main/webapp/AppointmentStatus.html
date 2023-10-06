@@ -221,7 +221,7 @@
                 var formData = {
                     UserId: userid
                 };
-
+ 
                 $.ajax({
 
                     cache: false,
@@ -236,7 +236,7 @@
                         for (i = 0; i < data.length; i++)
                         {
                             //alert(data[i].userId.FirstName);
-
+                             debugger;
                             $("#username").html(data[i].UserId.FirstName + " " + data[i].UserId.LastName);
                             html += "<tr>";
 
@@ -244,7 +244,7 @@
 
                             html += '<td>' + data[i].AppointmentDate + '</td>';
                             html += '<td>' + data[i].Problem + '</td>';
-                            if (data[i].Status == "Schedule")
+                            if (data[i].Status == "Scheduled")
                             {
                                 html += '<td class="text-success">' + data[i].Status + '</td>';
                             } else
@@ -252,7 +252,7 @@
                                 html += '<td class="text-danger">' + data[i].Status + '</td>';
                             }
 
-                            if (data[i].Status == 'Schedule')
+                            if (data[i].Status == 'Scheduled')
                             {
                                 html += '<td><a class="cancel" data-id=' + data[i].AppointmentId + ' href="#">Cancel Appointment</a></td>';
                             } else
@@ -260,7 +260,7 @@
                                 html += '<td></td>';
                             }
                             
-                            if (data[i].Status == 'Schedule')
+                            if (data[i].Status == 'Scheduled')
                             {
                                html += '<td><a class="discuss"  href="DiscussionForum.html?apid=' + data[i].AppointmentId + ' ">Discuss</a></td>';
                             } else
@@ -292,6 +292,7 @@
                         data: JSON.stringify(formData),
                         contentType: "application/json",
                         success: function (data) {
+                           // debugger;
                             loadData();
                         }
                     });

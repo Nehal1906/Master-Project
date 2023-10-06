@@ -240,22 +240,22 @@
                         for (i = 0; i < data.length; i++)
                         {
                             //alert(data[i].userId.FirstName);
-
-                            $("#username").html(data[i].UserId.FirstName + " " + data[i].UserId.LastName);
+//debugger;
+                            $("#username").html(data[i].helperId.userId.FirstName + " " + data[i].helperId.userId.LastName);
                             html += "<tr>";
 
                             html += '<td>' + data[i].userId.FirstName + ' ' + data[i].userId.LastName + '</td>';
 
                             html += '<td>' + data[i].AppointmentDate + '</td>';
                             html += '<td>' + data[i].Problem + '</td>';
-                            if (data[i].Status == "Schedule")
+                            if (data[i].Status == "Scheduled")
                             {
                                 html += '<td class="text-success">' + data[i].Status + '</td>';
                             } else
                             {
                                 html += '<td class="text-danger">' + data[i].Status + '</td>';
                             }
-                            if (data[i].Status == 'Schedule')
+                            if (data[i].Status == 'Scheduled')
                             {
                                 html += '<td><a class="cancel" data-id=' + data[i].AppointmentId + ' href="#">Cancel Appointment</a></td>';
                             } else
@@ -263,8 +263,14 @@
                                 html += '<td></td>';
                             }
 
-                            html += '<td><a class="discuss"  href="DiscussionForum.html?apid=' + data[i].AppointmentId + ' ">Discuss</a></td>';
-
+                            if (data[i].Status == 'Scheduled')
+                            {
+                               html += '<td><a class="discuss"  href="DiscussionForum.html?apid=' + data[i].AppointmentId + ' ">Discuss</a></td>';
+                            } else
+                            {
+                                html += '<td></td>';
+                            }
+                            
                             html += "</tr>";
                         }
 

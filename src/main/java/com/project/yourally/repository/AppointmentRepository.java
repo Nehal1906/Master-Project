@@ -42,10 +42,10 @@ public class AppointmentRepository implements Serializable {
         try {
             appdate = new SimpleDateFormat("yyyy-MM-dd hh:mm").parse(app.AppointmentDate);
             if (appdate.after(current)) {
-                app.Status = "Schedule";
+                app.Status = "Scheduled";
             } else {
 
-                app.Status = "Complete";
+                app.Status = "Completed";
             }
 
 //            entityManager.getTransaction().begin();
@@ -72,7 +72,7 @@ public class AppointmentRepository implements Serializable {
 
             list = query1.getResultList();
             for (Appointment app : list) {
-                if (!app.Status.equals("Cancel")) {
+                if (!app.Status.equals("Cancelled")) {
                     updateStatusByTime(app);
                     entityManager.getTransaction().begin();
                     entityManager.persist(app);
@@ -102,7 +102,7 @@ public class AppointmentRepository implements Serializable {
             list = query1.getResultList();
 
             for (Appointment app : list) {
-                if (!app.Status.equals("Cancel")) {
+                if (!app.Status.equals("Cancelled")) {
                     updateStatusByTime(app);
                     entityManager.getTransaction().begin();
                     entityManager.persist(app);
